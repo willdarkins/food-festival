@@ -17,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/willdarkins/food-festival/issues"
   },
-  "homepage": "https://github.com/willdarkins/food-festival#readme"
+  "homepage": "https://github.com/willdarkins/food-festival#readme",
+  "devDependencies": {
+    "webpack": "^4.46.0",
+    "webpack-cli": "^4.6.0"
+  }
 }
