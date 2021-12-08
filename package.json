@@ -1,29 +1,24 @@
 {
-  "name": "food-festival",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "webpack": "webpack --watch",
-    "build": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/willdarkins/food-festival.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/willdarkins/food-festival/issues"
-  },
-  "homepage": "https://github.com/willdarkins/food-festival#readme",
-  "devDependencies": {
-    "webpack": "^4.46.0",
-    "webpack-cli": "^4.6.0"
-  },
-  "dependencies": {
-    "bootstrap": "^4.3.1",
-    "jquery": "^3.6.0"
-  }
+    "name": "module-18-project",
+    "version": "1.0.0",
+    "description": "",
+    "main": "assets/js/script.js",
+    "scripts": {
+        "webpack": "webpack --watch",
+        "build": "webpack",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "webpack": "^4.46.0",
+        "webpack-cli": "^4.6.0"
+    },
+    "dependencies": {
+        "bootstrap": "^4.3.1",
+        "jquery": "^3.6.0",
+        "popper.js": "^1.16.0",
+        "save": "^2.4.0"
+    }
 }
