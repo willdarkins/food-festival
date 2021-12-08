@@ -1,3 +1,4 @@
+const webpack = require("webpack");
 const path = require("path");
 
 //create the main configuration object within our file to write options within this object that tell webpack what to do
@@ -9,6 +10,13 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'main.bundle.js'
     },
+    //plugins play an important role in directing webpack what to do
+    plugins:[
+        new webpack.ProvidePlugin({
+          $: "jquery",
+          jQuery: "jquery"
+        }),
+      ],
     //provide the mode in which we want webpack to run
     mode: 'development'
 }
