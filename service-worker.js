@@ -1,5 +1,5 @@
 //global constants
-const APP_PREFIX = 'FoodFest-';     
+const APP_PREFIX = 'FoodFest-';
 const VERSION = 'version_01';
 const CACHE_NAME = APP_PREFIX + VERSION;
 
@@ -19,8 +19,15 @@ const FILES_TO_CACHE = [
     "./dist/events.bundle.js",
     "./dist/tickets.bundle.js",
     "./dist/schedule.bundle.js"
-  ];
+];
 
 self.addEventListener('install', function (e) {
-
+    //e.waitUntil tells the browser to wait until the work is complete before terminating the service worker
+    e.waitUntil(
+        //caches.open finds the specific cache by name
+        caches.open(CACHE_NAME).then(function (cache) {
+            console.log('installing cache : ' + CACHE_NAME)
+            return cache.addAll(FILES_TO_CACHE)
+        })
+    )
 })
