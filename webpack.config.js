@@ -1,5 +1,6 @@
 //import statements for webpack, Bundle Analyzer plug-in and Path
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin
+
 const webpack = require("webpack");
 const path = require("path");
 
@@ -17,6 +18,14 @@ module.exports = {
   output: {
     filename: "[name].bundle.js",
     path: __dirname + "/dist",
+  },
+  //Configure our webpack config object to use the file-loader
+  module: {
+    rules: [
+      {
+        test: /\.jpg$/i
+      }
+    ]
   },
   //plugins play an important role in directing webpack what to do
   plugins: [
