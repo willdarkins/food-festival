@@ -1,3 +1,5 @@
+//import statements for webpack, Bundle Analyzer plug-in and Path
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin
 const webpack = require("webpack");
 const path = require("path");
 
