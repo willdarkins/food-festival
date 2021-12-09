@@ -14,10 +14,16 @@ module.exports = {
     },
     //plugins play an important role in directing webpack what to do
     plugins:[
+      //plug-in property to support jquery
         new webpack.ProvidePlugin({
           $: "jquery",
           jQuery: "jquery"
         }),
+        //plug-in property to support Bundle Analyzer
+        new BundleAnalyzerPlugin({
+          // the report outputs to an HTML file in the dist folder
+          analyzerMode: "static",
+        })
       ],
     //provide the mode in which we want webpack to run
     mode: 'development'
