@@ -13,6 +13,7 @@ module.exports = {
     tickets: "./assets/js/tickets.js"
   },
   //outputted bundled code sent to newly created dist directory
+  //name of each attribute in the entry object will be used in place of [name] in each bundle.js file that is created.
   output: {
     filename: "[name].bundle.js",
     path: __dirname + "/dist",
