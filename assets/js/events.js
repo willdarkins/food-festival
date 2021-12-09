@@ -1,23 +1,26 @@
-if (window.location.href.indexOf("index") > -1) {
+//separating conditional statement from script.js realted to DOM created events 
+if (window.location.href.indexOf("event") > -1) {
+    const currentEvent = JSON.parse(localStorage.getItem("currentEvent")) || {
+        title: "Title Placeholder",
+        subtitle: "",
+        description: ""
+    };
 
-    carouselSlides.forEach((slide, i) => {
-      $('.carousel-inner').append(`
-    <div class="carousel-item fullscreen-carousel" style="background-image: url('${slide.img}')">
-      <div class="d-flex h-100 align-items-center justify-content-center carousel-caption">
-          <div class="container">
-            <div class="row align-items-center justify-content-center">
-                <h2 class="display-4 mb-2">${slide.title}</h2>
-            </div>
-            <div class="row align-items-center justify-content-center"> 
-              <h3>${slide.subtitle}</h3>
-            </div>
-            <div class=" mt-4 row align-items-center justify-content-center"> 
-              <a class="btn btn-primary" href="${slide.btnUrl}">
-                  ${slide.btnText}
-              </a>
-            </div>
-          </div>
-      </div>
-    </div>`)
-    })
+    const pageEl = document.querySelector("#page");
+    
+    const containerEl = createEl("div", {class: "container"},
+      createEl("div", {class: "card mb-3"}, 
+        createEl("img", {class: "card-img-top", src: currentEvent.image || "https://via.placeholder.com/350x150"}),
+        createEl("div", {class: "card-body"}, 
+          createEl("h1", {class: "card-title"}, currentEvent.title || ""),
+          createEl("h2", {class: "text-muted"}, currentEvent.subtitle || ""),
+          createEl("p", {class: "card-text mt-3"}, currentEvent.description || createLoremIpsum(100)),
+          createEl("a", {class: "btn btn-primary", href: "tickets.html"}, "Buy Tickets")
+        )
+      ),
+      
+    )
+    
+
+    pageEl.appendChild(containerEl)
   }

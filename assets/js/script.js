@@ -70,6 +70,30 @@ $(document).ready(function() {
     return result;
   }
 
+  if (window.location.href.indexOf("index") > -1) {
+
+    carouselSlides.forEach((slide, i) => {
+      $('.carousel-inner').append(`
+    <div class="carousel-item fullscreen-carousel" style="background-image: url('${slide.img}')">
+      <div class="d-flex h-100 align-items-center justify-content-center carousel-caption">
+          <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <h2 class="display-4 mb-2">${slide.title}</h2>
+            </div>
+            <div class="row align-items-center justify-content-center"> 
+              <h3>${slide.subtitle}</h3>
+            </div>
+            <div class=" mt-4 row align-items-center justify-content-center"> 
+              <a class="btn btn-primary" href="${slide.btnUrl}">
+                  ${slide.btnText}
+              </a>
+            </div>
+          </div>
+      </div>
+    </div>`)
+    })
+  }
+
   if (window.location.href.indexOf("event") > -1) {
     const currentEvent = JSON.parse(localStorage.getItem("currentEvent")) || {
         title: "Title Placeholder",
@@ -222,22 +246,5 @@ $(document).ready(function() {
     const modalEl = document.querySelector(".modal-content");
     const modalBodyEl = document.querySelector(".modal-body");
     const modalFooterEl = document.querySelector(".modal-footer");
-
-  if (window.location.href.indexOf("tickets") > -1) {
-
-    function purchaseTicket () {
-
-      modalEl.removeChild(modalBodyEl)
-      modalEl.removeChild(modalFooterEl)
-
-      modalEl.append(createEl("div", {class: "modal-body"},
-        createEl("h5", {class: "modal-title"}, 
-        `Thanks for requesting a ticket purchase! We will send an email to ${purchaseEmail.value} to complete the order form!`
-        ),
-      ))
-      
-    }
-    purchaseBtn.addEventListener("click", purchaseTicket);
-  }
 
 });
