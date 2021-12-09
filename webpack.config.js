@@ -23,19 +23,22 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jpg$/i,
+        test: /\.jpg$/,
         use: [
           {
-            loader: "file-loader",
+            loader: 'file-loader',
             options: {
               esModule: false,
               name(file) {
-                return "[path][name].[ext]"
+                return '[path][name].[ext]';
               },
-              publicPath: function (url) {
-                return url.replace("../", "/assets/")
+              publicPath: function(url) {
+                return url.replace('../', '/assets/');
               }
             }
+          },
+          {
+            loader: 'image-webpack-loader'
           }
         ]
       }
