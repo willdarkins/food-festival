@@ -21,7 +21,7 @@ module.exports = {
         }),
         //plug-in property to support Bundle Analyzer
         new BundleAnalyzerPlugin({
-          // the report outputs to an HTML file in the dist folder
+          // the report outputs to an HTML file in the dist folder and loads on 'npm run build' command
           analyzerMode: "static",
         })
       ],
