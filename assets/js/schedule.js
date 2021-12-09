@@ -1,6 +1,8 @@
 //createEl() dynamically generates HTML elements and attributes based on the inputs or arguments passed into it
 require("bootstrap");
 const createEl = require("./domMethods");
+const { createLoremIpsum, dateConverter } = require("./helpers");
+
 
 //separating conditional statement from script.js realted to DOM created events
 // DOM manipulation code specific to each page
