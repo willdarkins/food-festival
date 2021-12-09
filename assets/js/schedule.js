@@ -6,7 +6,6 @@ replace it with the DOM ready method, which will then wrap the DOM manipulation 
 the conditional statements had done*/
 
 $(document).ready(function () {
-
     const date = new Date();
     const d = date.getDate();
     const m = date.getMonth();
