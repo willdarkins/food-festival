@@ -1,3 +1,7 @@
+//createEl() dynamically generates HTML elements and attributes based on the inputs or arguments passed into it
+require("bootstrap");
+const createEl = require("./domMethods");
+
 //separating conditional statement from script.js realted to DOM created events
 // DOM manipulation code specific to each page
 /*Because the DOM manipulation will now be linked to each HTML page directly through bundles,
