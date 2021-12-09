@@ -1,3 +1,8 @@
+//global constants
+const APP_PREFIX = 'FoodFest-';     
+const VERSION = 'version_01';
+const CACHE_NAME = APP_PREFIX + VERSION;
+
 /*Before we add code to the callback function,
 we need to define which files we'd like to cache
 to the top of the service-worker.js file*/
