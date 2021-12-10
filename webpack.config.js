@@ -1,6 +1,6 @@
-//import statements for webpack, Bundle Analyzer plug-in and Path
+//import statements for webpack, Bundle Analyzer, PwaManifest and plug-in and Path
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin
-
+const WebpackPwaManifest = require("webpack-pwa-manifest");
 const webpack = require("webpack");
 const path = require("path");
 
@@ -55,6 +55,21 @@ module.exports = {
     new BundleAnalyzerPlugin({
       // the report outputs to an HTML file in the dist folder and loads on 'npm run build' command
       analyzerMode: "static",
+    }),
+    new WebpackPwaManifest({
+      name: "Food Event",
+      short_name: "Foodies",
+      description: "An app that allows you to view upcoming food events.",
+      start_url: "../index.html",
+      background_color: "#01579b",
+      theme_color: "#ffffff",
+      fingerprints: false,
+      inject: false,
+      icons: [{
+        src: path.resolve("assets/img/icons/icon-512x512.png"),
+        sizes: [96, 128, 192, 256, 384, 512],
+        destination: path.join("assets", "icons")
+      }]
     })
   ],
   devServer: {
